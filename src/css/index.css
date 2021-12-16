@@ -1,0 +1,188 @@
+@import "normalize.css";
+@import "reset.css";
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoC1CzTtw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgo6eA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCxCvTtw.ttf) format('truetype');
+}
+body {
+  font-family: "Ubuntu";
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header h2 {
+  background: linear-gradient(135deg, #f5d2fa 5%, #ee96ff 40%, #cbffa1);
+  font-size: xx-large;
+  font-weight: 700;
+  color: white;
+  padding: 100px 0;
+  margin: 0 auto;
+  width: 100vw;
+  text-align: center;
+}
+.header div {
+  width: 100vw;
+}
+.header div p {
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #faebff;
+  text-align: center;
+  font-weight: 700;
+  color: #9c093d;
+}
+.header div ul {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  width: 30%;
+  margin: 0 auto;
+}
+.header div ul li {
+  padding-bottom: 5px;
+}
+.header div ul li span {
+  font-weight: 700;
+}
+main {
+  padding-top: 10px;
+  margin-bottom: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .enter-string {
+  border-top: solid 2px #9c093d;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 60%;
+}
+main .enter-string label,
+main .enter-string input {
+  display: block;
+  margin: 0 auto;
+}
+main .enter-string label {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+  color: #9c093d;
+  font-weight: 700;
+  font-size: 20px;
+}
+main .enter-string input {
+  width: 70%;
+  line-height: 2em;
+  padding-left: 10px;
+  border: solid 2px #dedede;
+  border-radius: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+main .enter-string input:focus {
+  border: solid 2px #9c093d;
+}
+main .sort-order {
+  width: 60%;
+  padding: 10px 0;
+}
+main .sort-order div {
+  width: 100%;
+  padding-left: 15%;
+  padding-bottom: 8px;
+}
+main .sort-order div input[type="radio"] {
+  margin-top: -2px;
+  vertical-align: middle;
+  color: #9c093d;
+}
+main .sort-order div label {
+  font-size: 15px;
+}
+main #find-button {
+  width: 15%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  background-color: #faebff;
+  color: #9c093d;
+  margin-bottom: 10px;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+main #find-button:hover {
+  background-color: #9c093d;
+  color: #faebff;
+  cursor: pointer;
+}
+main .list-area {
+  width: 60%;
+  margin-top: 20px;
+  background-color: #faebff;
+  padding: 20px 15px;
+}
+main .list-area h2 {
+  text-align: center;
+}
+main .list-area ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 5px;
+}
+main .list-area ul li {
+  display: inline-block;
+}
+main .list-area ul .palindrome-substring {
+  grid-column: 1;
+  grid-row: 1;
+}
+main .list-area ul .position {
+  grid-column: 2;
+  grid-row: 1;
+}
+main .list-area ul .length {
+  grid-column: 3;
+  grid-row: 1;
+}
+footer {
+  width: 100vw;
+  height: 100px;
+  background: linear-gradient(135deg, #f5d2fa 5%, #ee96ff 40%, #cbffa1);
+  position: relative;
+}
+footer h2 {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
