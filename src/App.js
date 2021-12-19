@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
-import FindPalindrome from "./components/FindPalindrome";
+import Find from "./components/Find";
+import ListResults from "./components/ListResults";
+import About from "./components/About";
 import Footer from "./components/Footer";
 
 export class App extends Component {
@@ -8,7 +10,8 @@ export class App extends Component {
     return (
       <div>
         <Header />
-        <FindPalindrome />
+        <Find />
+        <About />
         <Footer />
       </div>
     );

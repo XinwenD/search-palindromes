@@ -68,10 +68,11 @@ main {
   padding-top: 10px;
   margin-bottom: 50px;
   width: 100vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 main .enter-string {
   border-top: solid 2px #9c093d;
@@ -109,6 +110,7 @@ main .enter-string input:focus {
 main .sort-order {
   width: 60%;
   padding: 10px 0;
+  border-bottom: solid 2px #9c093d;
 }
 main .sort-order div {
   width: 100%;
@@ -133,7 +135,7 @@ main #find-button {
   border-radius: 10px;
   background-color: #faebff;
   color: #9c093d;
-  margin-bottom: 10px;
+  margin: 50px auto;
   text-align: center;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -143,39 +145,84 @@ main #find-button:hover {
   color: #faebff;
   cursor: pointer;
 }
-main .list-area {
+main section {
   width: 60%;
-  margin-top: 20px;
+  height: 500px;
   background-color: #faebff;
   padding: 20px 15px;
 }
-main .list-area h2 {
-  text-align: center;
-}
-main .list-area ul {
+main section .list-title {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
-main .list-area ul li {
-  display: inline-block;
-}
-main .list-area ul .palindrome-substring {
+main section .list-title .title-palindrome-substring {
   grid-column: 1;
   grid-row: 1;
+  text-align: center;
 }
-main .list-area ul .position {
+main section .list-title .title-length {
   grid-column: 2;
   grid-row: 1;
+  text-align: center;
 }
-main .list-area ul .length {
+main section .list-title .title-position {
   grid-column: 3;
   grid-row: 1;
+  text-align: center;
+}
+main section .list-area {
+  padding-top: 10px;
+  height: 470px;
+  overflow-y: scroll;
+  background-color: #fcfcfc;
+  position: relative;
+}
+main section .list-area::-webkit-scrollbar {
+  width: 0;
+}
+main section .list-area h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: x-large;
+  color: #9c093d;
+}
+main section .list-area ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 5px 0;
+}
+main section .list-area ul li {
+  display: inline-block;
+}
+main section .list-area ul .palindrome-substring {
+  grid-column: 1;
+  grid-row: 1;
+  padding-left: 30%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+main section .list-area ul .length {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+}
+main section .list-area ul .position {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
 }
 footer {
   width: 100vw;
   height: 100px;
-  background: linear-gradient(135deg, #f5d2fa 5%, #ee96ff 40%, #cbffa1);
+  background: linear-gradient(135deg, #cbffa1 5%, #ee96ff 40%, #f5d2fa);
   position: relative;
 }
 footer h2 {

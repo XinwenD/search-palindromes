@@ -55,10 +55,11 @@ main {
   padding-top: 10px;
   margin-bottom: 50px;
   width: 100vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   .enter-string {
     border-top: solid 2px @font-color;
     padding-top: 20px;
@@ -95,6 +96,7 @@ main {
   .sort-order {
     width: @main-children-width;
     padding: 10px 0;
+    border-bottom: solid 2px @font-color;
     div {
       width: 100%;
       padding-left: 15%;
@@ -119,7 +121,7 @@ main {
     border-radius: 10px;
     background-color: @back-ground-color;
     color: @font-color;
-    margin-bottom: 10px;
+    margin: 50px auto;
     text-align: center;
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -129,32 +131,79 @@ main {
       cursor: pointer;
     }
   }
-  .list-area {
+  section {
     width: @main-children-width;
-    margin-top: 20px;
+    height: 500px;
+    // margin-top: 20px;
     background-color: @back-ground-color;
     padding: 20px 15px;
-    h2 {
-      text-align: center;
-    }
-    ul {
+    .list-title {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      padding-bottom: 5px;
-      li {
-        display: inline-block;
-      }
-      .palindrome-substring {
+      padding-bottom: 10px;
+      .title-palindrome-substring {
         grid-column: 1;
         grid-row: 1;
+        text-align: center;
       }
-      .position {
+      .title-length {
         grid-column: 2;
         grid-row: 1;
+        text-align: center;
       }
-      .length {
+      .title-position {
         grid-column: 3;
         grid-row: 1;
+        text-align: center;
+      }
+    }
+    .list-area {
+      padding-top: 10px;
+      height: 470px;
+      overflow-y: scroll;
+      background-color: #fcfcfc;
+      position: relative;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-top: 20px;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 700;
+        font-size: x-large;
+        color: @font-color;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        padding: 5px 0;
+        li {
+          display: inline-block;
+        }
+        .palindrome-substring {
+          grid-column: 1;
+          grid-row: 1;
+          padding-left: 30%;
+          word-wrap: break-word;
+          word-break: break-all;
+        }
+        .length {
+          grid-column: 2;
+          grid-row: 1;
+          text-align: center;
+        }
+        .position {
+          grid-column: 3;
+          grid-row: 1;
+          text-align: center;
+        }
       }
     }
   }
@@ -163,7 +212,7 @@ main {
 footer {
   width: 100vw;
   height: 100px;
-  background: linear-gradient(135deg, #f5d2fa 5%, #ee96ff 40%, #cbffa1);
+  background: linear-gradient(135deg, #cbffa1 5%, #ee96ff 40%, #f5d2fa);
   position: relative;
   h2 {
     position: absolute;
