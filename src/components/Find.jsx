@@ -19,12 +19,37 @@ export class Find extends Component {
   }
 
   setOrder = (e) => {
+    // console.log(e);
     if (e.target.name === SORTKEY) {
-      this.setState({ order: { sortKey: e.target.value } });
-    } else if (e.target.name === POSITION) {
-      this.setState({ order: { position: e.target.value } });
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          order: {
+            ...prevState.order,
+            sortKey: e.target.value,
+          },
+        };
+      });
     } else if (e.target.name === LENGTH) {
-      this.setState({ order: { length: e.target.value } });
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          order: {
+            ...prevState.order,
+            length: e.target.value,
+          },
+        };
+      });
+    } else if (e.target.name === POSITION) {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          order: {
+            ...prevState.order,
+            position: e.target.value,
+          },
+        };
+      });
     }
   };
 
@@ -45,6 +70,7 @@ export class Find extends Component {
   };
 
   render() {
+    // console.log(this.state);
     return (
       <main>
         <div className="enter-string">
