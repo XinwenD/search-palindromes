@@ -70,7 +70,6 @@ export class Find extends Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <main>
         <div className="enter-string">
