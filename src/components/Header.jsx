@@ -1,3 +1,18 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
+// Introduction:
+//
+//    This react component renders the header of web app
+//
+// Component:
+//
+//    class Header {
+//        render(){
+//        }
+//    }
+//
+
 import React, { Component } from "react";
 
 export class Header extends Component {

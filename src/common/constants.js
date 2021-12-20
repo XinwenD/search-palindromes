@@ -1,3 +1,6 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
 // Definition for all constants
 //
 // ASCEND: String, "ascend". Represent the ascending order

@@ -1,11 +1,29 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
+// Introduction:
+//
+//    This react component renders the list of palindromic substrings
+//
+// Component:
+//
+//    class ListResults {
+//        constructor(props){}
+//        render(){
+//        }
+//    }
+//
+
 import React, { Component } from "react";
 
 export class ListResults extends Component {
+  // receive props from parent component Find
   constructor(props) {
     super(props);
   }
 
   render() {
+    // destructuring from props
     const { palindromes, isFirst } = this.props;
     return (
       <section>

@@ -1,3 +1,18 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
+// Introduction:
+//
+//    This react component renders the footer of web app
+//
+// Component:
+//
+//    class Footer {
+//        render(){
+//        }
+//    }
+//
+
 import React, { Component } from "react";
 
 export class Footer extends Component {

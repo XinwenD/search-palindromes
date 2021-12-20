@@ -1,3 +1,6 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
 // Introduction:
 //
 //    This function finds all palindromes in a given string,

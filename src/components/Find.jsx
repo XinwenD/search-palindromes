@@ -1,3 +1,24 @@
+// Date: Dec 20 2021
+// Author: Xinwen Dong
+//
+// Introduction:
+//
+//    This react component renders the main part of web app.
+//
+// Component:
+//
+//    class Find {
+//        constructor(props){}
+//        setOrder(e){}
+//        handleInputValue(){}
+//        triggerButtonClick(e){}
+//        render(){
+//            ...
+//            <ListResults/>
+//        }
+//    }
+//
+
 import React, { Component } from "react";
 import ListResults from "./ListResults";
 import sortPalinArr from "../common/sortPalinArr";
@@ -5,6 +26,16 @@ import findPalindrome from "../common/findPalindromes";
 import { ASCEND, POSITION, LENGTH, SORTKEY } from "../common/constants";
 
 export class Find extends Component {
+  // initialize state for Find component with default values
+  // this.state = {
+  //    palindromes: null,  // an array to save all palindromic substrings, their positions and lengths
+  //    isFirst: true,      // check if it is the first time to render this component
+  //    order: {
+  //      sortKey: LENGTH,  // radio input value for primary sort key; default "length"
+  //      length: ASCEND,   // sort order for length column; default "ascend"
+  //      position: ASCEND, // sort order for position column;; default "ascend"
+  //    },
+  //  };
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +49,13 @@ export class Find extends Component {
     };
   }
 
+  // this.state.order has three properties, corresponding to 3 radio inputs
+  // this.state.order = {
+  //      sortKey: LENGTH,
+  //      length: ASCEND,
+  //      position: ASCEND,
+  //    }
   setOrder = (e) => {
-    // console.log(e);
     if (e.target.name === SORTKEY) {
       this.setState((prevState) => {
         return {
@@ -53,15 +89,19 @@ export class Find extends Component {
     }
   };
 
+  // call two external functions:
+  // 1) findPalindrome() to find all palindromic substrings
+  // 2) sortPalinArr() to sort these substrings
   handleInputValue = () => {
     const { order } = this.state;
     let { value } = this.inputFind;
-    value = value.replace(/\s+/g, "");
+    value = value.replace(/\s+/g, ""); // remove all white spaces
     this.setState({ isFirst: false });
     const palinArr = findPalindrome(value);
     this.setState({ palindromes: sortPalinArr(palinArr, order) });
   };
 
+  // user can press enter to trigger "find" button after entering the string
   triggerButtonClick = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -152,6 +192,7 @@ export class Find extends Component {
         <button onClick={this.handleInputValue} id="find-button">
           Find
         </button>
+        {/* call the child component ListRecults and pass props to it */}
         <ListResults {...this.state} />
       </main>
     );
