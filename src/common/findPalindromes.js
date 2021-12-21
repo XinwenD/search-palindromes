@@ -55,8 +55,12 @@
 */
 
 const findPalindrome = (str) => {
+  str = str.trim().replace(/\s+/g, "");
   const size = str.length;
   const palinArr = [];
+  if (size <= 1) {
+    return palinArr;
+  }
   let count = 0;
 
   // loop over all palindromic centers

@@ -43,6 +43,7 @@ export class Find extends Component {
       palindromes: null,
       hasPalindromes: true,
       isFirst: true,
+      isValid: true,
       order: {
         sortKey: LENGTH,
         length: ASCEND,
@@ -97,22 +98,26 @@ export class Find extends Component {
   handleInputValue = () => {
     const { order } = this.state;
     let { value } = this.inputFind;
-    value = value.replace(/\s+/g, ""); // remove all white spaces
     this.setState({ isFirst: false });
-    const palinArr = findPalindrome(value);
-
-    // if there is no palindrome
-    // only one palindrome
-    // more than one palindrome (need to sort)
-    if (palinArr.length === 0) {
-      this.setState({ hasPalindromes: false });
-    } else if (palinArr.length === 1) {
-      this.setState({ hasPalindromes: true, palindromes: palinArr });
+    value = value.trim().replace(/\s+/g, ""); // remove all white spaces
+    if (value.length <= 1) {
+      this.setState({ isValid: false });
     } else {
-      this.setState({
-        hasPalindromes: true,
-        palindromes: sortPalinArr(palinArr, order),
-      });
+      const palinArr = findPalindrome(value);
+
+      // if there is no palindrome
+      // only one palindrome
+      // more than one palindrome (need to sort)
+      if (palinArr.length === 0) {
+        this.setState({ hasPalindromes: false });
+      } else if (palinArr.length === 1) {
+        this.setState({ hasPalindromes: true, palindromes: palinArr });
+      } else {
+        this.setState({
+          hasPalindromes: true,
+          palindromes: sortPalinArr(palinArr, order),
+        });
+      }
     }
   };
 

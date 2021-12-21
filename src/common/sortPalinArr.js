@@ -60,7 +60,6 @@ import { LENGTH, POSITION } from "./constants";
 import quickSort from "./quickSort";
 
 const sortPalinArr = (arr, order) => {
-  console.log(arr);
   const size = arr.length;
   let sortedArr = [];
   let start = 0; // The start index for each secondary key group

@@ -24,7 +24,8 @@ export class ListResults extends Component {
 
   render() {
     // destructuring from props
-    const { palindromes, isFirst, hasPalindromes } = this.props;
+    const { palindromes, isFirst, isValid, hasPalindromes } = this.props;
+    // console.log(JSON.stringify(palindromes));
     return (
       <section>
         <ul className="list-title">
@@ -35,18 +36,25 @@ export class ListResults extends Component {
         <div className="list-area">
           {isFirst ? (
             <h2>Enter a string to check all palindromes</h2>
-          ) : hasPalindromes ? (
-            palindromes.map((palindrome, index) => {
-              return (
-                <ul key={index}>
-                  <li className="palindrome-substring">{palindrome.palin}</li>
-                  <li className="length">{palindrome.length}</li>
-                  <li className="position">{palindrome.position}</li>
-                </ul>
-              );
-            })
+          ) : isValid ? (
+            hasPalindromes ? (
+              palindromes.map((palindrome, index) => {
+                return (
+                  <ul key={index}>
+                    <li className="palindrome-substring">{palindrome.palin}</li>
+                    <li className="length">{palindrome.length}</li>
+                    <li className="position">{palindrome.position}</li>
+                  </ul>
+                );
+              })
+            ) : (
+              <h2>This string does not have palindromes, try another one :)</h2>
+            )
           ) : (
-            <h2>This string does not have palindromes, try another one :)</h2>
+            <h2>
+              Your input string is not valid. Please do not enter white spaces.
+              The string should have more than one character.
+            </h2>
           )}
         </div>
       </section>
