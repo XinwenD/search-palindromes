@@ -1,4 +1,4 @@
-// Date: Dec 20 2021
+/* Date: Dec 20 2021
 // Author: Xinwen Dong
 //
 // Introduction:
@@ -49,23 +49,31 @@
 //
 //    -- count: Integer. Count how many palindromes found in the string. Also works for the index in the palinArr
 //
-//    -- left: Integer. Left pointer.
+//    -- left: Integer. Left start pointer of the palindromic center.
 //
-//    -- right: Integer. Right pointer.
-//
+//    -- right: Integer. Right start pointer of the palindromic center.
+*/
 
 const findPalindrome = (str) => {
   const size = str.length;
   const palinArr = [];
   let count = 0;
+
+  // loop over all palindromic centers
   for (let i = 0; i < 2 * size - 1; i++) {
+    // find the left/right start positions for two pointers
     let left = Math.floor(i / 2);
     let right = Math.floor(i / 2) + (i % 2);
+
+    // while left pointer has not gone across the lower bound
+    // and tight pointer has not gone across the upper bound
+    // and the characters they are pointing at are equal
     while (
       left >= 0 &&
       right < size &&
       str.charAt(left) === str.charAt(right)
     ) {
+      // left !== right excludes the case of a single character
       if (left !== right) {
         palinArr[count] = {
           palin: str.slice(left, right + 1),

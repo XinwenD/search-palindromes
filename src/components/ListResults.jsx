@@ -24,7 +24,7 @@ export class ListResults extends Component {
 
   render() {
     // destructuring from props
-    const { palindromes, isFirst } = this.props;
+    const { palindromes, isFirst, hasPalindromes } = this.props;
     return (
       <section>
         <ul className="list-title">
@@ -35,7 +35,7 @@ export class ListResults extends Component {
         <div className="list-area">
           {isFirst ? (
             <h2>Enter a string to check all palindromes</h2>
-          ) : (
+          ) : hasPalindromes ? (
             palindromes.map((palindrome, index) => {
               return (
                 <ul key={index}>
@@ -45,6 +45,8 @@ export class ListResults extends Component {
                 </ul>
               );
             })
+          ) : (
+            <h2>This string does not have palindromes, try another one :)</h2>
           )}
         </div>
       </section>
