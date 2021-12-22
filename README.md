@@ -11,6 +11,17 @@ Author: Xinwen Dong
 
 Date: Dec 21, 2021
 
+## Content
+
+1. Summary
+   1.1 Time/Space Complexity
+2. Assumptions
+3. File Structure
+4. Unit Tests & Test Strategy
+   4.1 Test Results
+   4.2 Test Strategy
+5. Future Work
+
 ## Summary
 
 A palindrome is a string that reads the same when reversed, e.g., “madam". One-character strings are
