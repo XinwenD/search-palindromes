@@ -22,10 +22,10 @@
 import React, { Component } from "react";
 import ListResults from "./ListResults";
 import sortPalinArr from "../common/sortPalinArr";
-import findPalindrome from "../common/findPalindromes";
+import searchPalindrome from "../common/searchPalindromes";
 import { ASCEND, POSITION, LENGTH, SORTKEY } from "../common/constants";
 
-export class Find extends Component {
+export class Search extends Component {
   // initialize state for Find component with default values
   // this.state = {
   //    palindromes: null,    // an array to save all palindromic substrings, their positions and lengths
@@ -93,7 +93,7 @@ export class Find extends Component {
   };
 
   // call two external functions:
-  // 1) findPalindrome() to find all palindromic substrings
+  // 1) searchPalindrome() to find all palindromic substrings
   // 2) sortPalinArr() to sort these substrings
   handleInputValue = () => {
     const { order } = this.state;
@@ -103,7 +103,7 @@ export class Find extends Component {
     if (value.length <= 1) {
       this.setState({ isValid: false });
     } else {
-      const palinArr = findPalindrome(value);
+      const palinArr = searchPalindrome(value);
 
       // if there is no palindrome
       // only one palindrome
@@ -219,7 +219,7 @@ export class Find extends Component {
           </div>
 
           <button onClick={this.handleInputValue} id="find-button">
-            Find
+            Search
           </button>
         </form>
         {/* call the child component ListRecults and pass props to it */}
@@ -229,4 +229,4 @@ export class Find extends Component {
   }
 }
 
-export default Find;
+export default Search;

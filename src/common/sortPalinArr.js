@@ -106,8 +106,8 @@ const sortPalinArr = (arr, order) => {
       }
     }
     return sortedArr;
-  } else if (order.sortKey === POSITION) {
-    // first sort the arr by primary key "length"
+  } else {
+    // first sort the arr by primary key "position"
     quickSort(arr, 0, arr.length - 1, order.position, POSITION);
     // loop over the sorted arr
     for (let i = 1; i < size; i++) {

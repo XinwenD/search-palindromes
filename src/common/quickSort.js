@@ -94,7 +94,7 @@ const quickSort = (arr, left, right, order, key) => {
         l++;
       }
     }
-  } else if (order === DESCEND) {
+  } else {
     // while loop move arr[]>pivot to the left side of pivot
     // move arr[]<pivot to the right side of pivot
     while (l < r) {

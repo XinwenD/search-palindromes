@@ -17,7 +17,7 @@
 import React, { Component } from "react";
 
 export class ListResults extends Component {
-  // receive props from parent component Find
+  // receive props from parent component Search
   constructor(props) {
     super(props);
   }
@@ -25,7 +25,7 @@ export class ListResults extends Component {
   render() {
     // destructuring from props
     const { palindromes, isFirst, isValid, hasPalindromes } = this.props;
-    // console.log(JSON.stringify(palindromes));
+    console.log(JSON.stringify(palindromes));
     return (
       <section>
         <ul className="list-title">

@@ -10,8 +10,8 @@
 //    class App {
 //        render(){
 //            <Header />
-//            <Find />
-//                <ListResults /> // child of Find component
+//            <Search />
+//                <ListResults /> // child of Search component
 //            <About />
 //            <Footer />
 //    }
@@ -19,7 +19,7 @@
 
 import React, { Component } from "react";
 import Header from "./components/Header";
-import Find from "./components/Find";
+import Search from "./components/Search";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
@@ -28,7 +28,7 @@ export class App extends Component {
     return (
       <div>
         <Header />
-        <Find />
+        <Search />
         <About />
         <Footer />
       </div>

@@ -21,7 +21,7 @@
 //    Space complexity:
 //        Since the output is an array containing all results, the space complexity is O(n)
 //
-// Function findPalindrome (str) {
+// Function searchPalindrome (str) {
 //
 //    return palinArr;
 //
@@ -54,7 +54,7 @@
 //    -- right: Integer. Right start pointer of the palindromic center.
 */
 
-const findPalindrome = (str) => {
+const searchPalindrome = (str) => {
   str = str.trim().replace(/\s+/g, "");
   const size = str.length;
   const palinArr = [];
@@ -93,4 +93,4 @@ const findPalindrome = (str) => {
   return palinArr;
 };
 
-export default findPalindrome;
+export default searchPalindrome;
