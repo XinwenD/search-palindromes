@@ -1,4 +1,4 @@
-import findPalindrome from "../src/common/findPalindromes";
+import searchPalindrome from "../src/common/searchPalindromes";
 
 // test case: ABCBAHELLOHOWRACECARAREYOUILOVEUEVOLIIAMAIDOINGGOOD
 const result = [
@@ -25,5 +25,10 @@ const result = [
 
 test("test the given string", () => {
   const str = "ABCBAHELLOHOWRACECARAREYOUILOVEUEVOLIIAMAIDOINGGOOD";
-  expect(findPalindrome(str)).toEqual(result);
+  expect(searchPalindrome(str)).toEqual(result);
+});
+
+test("test str.length <= 1", () => {
+  const str = "";
+  expect(searchPalindrome(str)).toEqual([]);
 });
