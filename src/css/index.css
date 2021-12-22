@@ -107,26 +107,51 @@ main .enter-string input {
 main .enter-string input:focus {
   border: solid 2px #9c093d;
 }
-main .sort-order {
+main .enter-string .onchange-handler {
   width: 60%;
-  padding: 10px 0;
-  border-bottom: solid 2px #9c093d;
+  margin: 20px auto 0;
 }
-main .sort-order div {
+main .enter-string .onchange-handler .options-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   width: 100%;
-  padding-left: 15%;
-  padding-bottom: 8px;
+  margin: 0;
+  padding-bottom: 5px;
 }
-main .sort-order div input[type="radio"] {
-  margin-top: -2px;
+main .enter-string .onchange-handler .options-area h1 {
+  top: 0;
+  left: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+main .enter-string .onchange-handler .options-area div:first-child {
+  grid-column: 2;
+  grid-row: 1;
+}
+main .enter-string .onchange-handler .options-area div:last-child {
+  grid-column: 2;
+  grid-row: 2;
+}
+main .enter-string .onchange-handler .options-area div {
+  width: 100%;
+  padding-bottom: 5px;
+}
+main .enter-string .onchange-handler .options-area div input[type="radio"] {
+  width: 15%;
+  display: inline;
+  margin-top: -1px;
   vertical-align: middle;
   color: #9c093d;
 }
-main .sort-order div label {
+main .enter-string .onchange-handler .options-area div label {
+  display: inline;
   font-size: 15px;
+  text-align: start;
+  padding: 0;
 }
-main #find-button {
-  width: 15%;
+main .enter-string #find-button {
+  width: 25%;
   height: 40px;
   font-size: 15px;
   font-weight: 700;
@@ -140,7 +165,7 @@ main #find-button {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-main #find-button:hover {
+main .enter-string #find-button:hover {
   background-color: #9c093d;
   color: #faebff;
   cursor: pointer;
@@ -218,6 +243,60 @@ main section .list-area ul .position {
   grid-column: 3;
   grid-row: 1;
   text-align: center;
+}
+.about-section {
+  width: 60%;
+  margin: 0 auto 50px;
+}
+.about-section h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: x-large;
+  color: #9c093d;
+  font-weight: 700;
+}
+.about-section .link-github {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.about-section .link-github a {
+  display: block;
+  margin: 0 auto 10px;
+  color: white;
+  width: 50%;
+  height: 2em;
+  background-color: #9c093d;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border: solid 2px #9c093d;
+}
+.about-section .link-github a:hover {
+  background-color: #faebff;
+  color: #9c093d;
+}
+.about-section .link-github p {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 15px;
+  color: #616161;
+}
+.about-section .summary {
+  margin: 20px 10px;
+}
+.about-section .summary li {
+  padding-bottom: 5px;
+}
+.about-section .summary li span {
+  font-weight: 700;
+}
+.about-section .introduction {
+  margin: 0 10px;
+}
+.about-section .introduction p {
+  padding-bottom: 5px;
 }
 footer {
   width: 100vw;

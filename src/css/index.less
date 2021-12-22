@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
 @back-ground-color: #faebff;
 @font-color: #9c093d;
+@subtitle-font-color: #616161;
 @main-children-width: 60%;
 
 body {
@@ -88,49 +89,89 @@ main {
       -webkit-transition: 0.5s;
       transition: 0.5s;
       outline: none;
+
       &:focus {
         border: solid 2px @font-color;
       }
     }
-  }
-  .sort-order {
-    width: @main-children-width;
-    padding: 10px 0;
-    border-bottom: solid 2px @font-color;
-    div {
-      width: 100%;
-      padding-left: 15%;
-      padding-bottom: 8px;
-      input[type="radio"] {
-        margin-top: -2px;
-        vertical-align: middle;
-        color: @font-color;
+    .onchange-handler {
+      width: 60%;
+      margin: 20px auto 0;
+      .options-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 5px;
+        h1 {
+          top: 0;
+          left: 0;
+          grid-column: 1;
+          grid-row: 1;
+        }
+        div:first-child {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        div:last-child {
+          grid-column: 2;
+          grid-row: 2;
+        }
+        div {
+          width: 100%;
+          padding-bottom: 5px;
+          input[type="radio"] {
+            width: 15%;
+            display: inline;
+            margin-top: -1px;
+            vertical-align: middle;
+            color: @font-color;
+          }
+          label {
+            display: inline;
+            font-size: 15px;
+            text-align: start;
+            padding: 0;
+          }
+        }
       }
-      label {
-        font-size: 15px;
+    }
+
+    #find-button {
+      width: 25%;
+      height: 40px;
+      font-size: 15px;
+      font-weight: 700;
+      display: block;
+      border: none;
+      border-radius: 10px;
+      background-color: @back-ground-color;
+      color: @font-color;
+      margin: 50px auto;
+      text-align: center;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      &:hover {
+        background-color: @font-color;
+        color: @back-ground-color;
+        cursor: pointer;
       }
     }
   }
-  #find-button {
-    width: 15%;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 700;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    background-color: @back-ground-color;
-    color: @font-color;
-    margin: 50px auto;
-    text-align: center;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    &:hover {
-      background-color: @font-color;
-      color: @back-ground-color;
-      cursor: pointer;
-    }
-  }
+
+  // .sort-order {
+  //   width: @main-children-width;
+  //   padding: 10px 0;
+  //   border-bottom: solid 2px @font-color;
+  //   div {
+  //     width: 100%;
+  //     padding-left: 15%;
+  //     padding-bottom: 8px;
+  //
+  //   }
+  // }
+
   section {
     width: @main-children-width;
     height: 500px;
@@ -205,6 +246,62 @@ main {
           text-align: center;
         }
       }
+    }
+  }
+}
+
+.about-section {
+  width: @main-children-width;
+  margin: 0 auto 50px;
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: x-large;
+    color: @font-color;
+    font-weight: 700;
+  }
+  .link-github {
+    margin: 0 auto;
+    margin-top: 20px;
+    a {
+      display: block;
+      margin: 0 auto 10px;
+      color: white;
+      width: 50%;
+      height: 2em;
+      background-color: @font-color;
+      text-align: center;
+      text-decoration: none;
+      line-height: 2em;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      border: solid 2px @font-color;
+      &:hover {
+        background-color: @back-ground-color;
+        color: @font-color;
+      }
+    }
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 15px;
+      color: @subtitle-font-color;
+    }
+  }
+  .summary {
+    margin: 20px 10px;
+    li {
+      padding-bottom: 5px;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  .introduction {
+    margin: 0 10px;
+    p {
+      padding-bottom: 5px;
     }
   }
 }

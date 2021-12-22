@@ -149,8 +149,12 @@ export class Search extends Component {
             minLength="2"
           />
 
-          <div onChange={(event) => this.setOrder(event)}>
-            <div className="sort-key">
+          <div
+            className="onchange-handler"
+            onChange={(event) => this.setOrder(event)}
+          >
+            <div className="sort-key options-area">
+              <h1>Primary Sort Key</h1>
               <div className="order-length-key">
                 <input
                   type="radio"
@@ -159,7 +163,7 @@ export class Search extends Component {
                   value="length"
                   defaultChecked
                 />
-                <label htmlFor="length-key"> Primary sort key: Length</label>
+                <label htmlFor="length-key">Length</label>
               </div>
               <div className="order-position-key">
                 <input
@@ -168,13 +172,11 @@ export class Search extends Component {
                   id="position-key"
                   value="position"
                 />
-                <label htmlFor="position-key">
-                  {" "}
-                  Primary sort key: Position
-                </label>
+                <label htmlFor="position-key">Position</label>
               </div>
             </div>
-            <div className="length-sort-order">
+            <div className="length-sort-order options-area">
+              <h1>Length Order</h1>
               <div className="order-ascend">
                 <input
                   type="radio"
@@ -183,7 +185,7 @@ export class Search extends Component {
                   value="ascend"
                   defaultChecked
                 />
-                <label htmlFor="length-ascend"> Length: Ascending</label>
+                <label htmlFor="length-ascend">Ascending</label>
               </div>
               <div className="order-descend">
                 <input
@@ -192,10 +194,11 @@ export class Search extends Component {
                   id="length-descend"
                   value="descend"
                 />
-                <label htmlFor="length-descend"> Length: Descending</label>
+                <label htmlFor="length-descend">Descending</label>
               </div>
             </div>
-            <div className="position-sort-order">
+            <div className="position-sort-order options-area">
+              <h1>Position Order</h1>
               <div className="order-ascend">
                 <input
                   type="radio"
@@ -204,7 +207,7 @@ export class Search extends Component {
                   value="ascend"
                   defaultChecked
                 />
-                <label htmlFor="position-ascend"> Position: Ascending</label>
+                <label htmlFor="position-ascend">Ascending</label>
               </div>
               <div className="order-descend">
                 <input
@@ -213,7 +216,7 @@ export class Search extends Component {
                   id="position-descend"
                   value="descend"
                 />
-                <label htmlFor="position-descend"> Position: Descending</label>
+                <label htmlFor="position-descend">Descending</label>
               </div>
             </div>
           </div>
