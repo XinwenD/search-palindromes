@@ -8,6 +8,7 @@ This web app lists all palindromic substrings and sort them according to their l
 - Build: Webpack
 
 Author: Xinwen Dong
+
 Date: Dec 21, 2021
 
 ## Summary
@@ -23,7 +24,7 @@ In this app, you can enter a string in the "Enter a string" input field. By sele
 
 One can see all palindromic substrings in a tabular list.
 
-Let's take string "@@$$$$@@LOLLOL" as an example, by setting primary sort key as length, sort by ascending in both length and position, we will get all palindromic substrings as shown below:
+Let's take the string "@@$$$$@@LOLLOL" as an example, by setting primary sort key as length, sort by ascending order in both length and position, we will get all palindromic substrings as shown below:
 
 | Palindrome | Length | Position |
 | ---------- | ------ | -------- |
@@ -59,7 +60,7 @@ For the core functions:
     - `O(n)` for extending two pointers
     - The total time complexity is `O(n^2)`
 
-  - Space complexity: The utput is an array containing all results -- space complexity is `O(n)`
+  - Space complexity: The output is an array containing all results -- space complexity is `O(n)`
 
 - `quickSort.js`
 
@@ -73,16 +74,16 @@ For the core functions:
 
 ## Assumptions
 
-This app neglects all white spaces. Ths input string length after trimming all white spaces should at least be greater than or equal to 2. Validation of this is conducted at front end component `Search.jsx`.
+This app neglects all white spaces. After trimming all white spaces, the length input string should at least be greater than or equal to 2. Validation of this is conducted at front end component `Search.jsx`.
 
 This app is also case sensitive, which means no case conversion. If we compare `"Q"` with `"q"`, it should be falsy.
 
 ## File structure
 
-This file tree contains the whole web app.
-
 ```
-📦/        // Project root folder
+// project file tree
+
+📦/                         // Project root folder
  ┣ 📂public
  ┣ 📂src
  ┣ 📂test
@@ -95,6 +96,8 @@ This file tree contains the whole web app.
 ```
 
 ```
+// tree of "/src"
+
 📦src
 ┣ 📂common           // includes scripts that searches the palindromic substrings and sort those strings.
 ┃ ┣ 📜constants.js           // define frequently used constants
@@ -117,9 +120,13 @@ This file tree contains the whole web app.
 ```
 
 ```
+// tree of "/test"
+
 📦test
 ┣ 📜searchPalindromes.test.js    // test the method of looking for palindromic substrings
 ┗ 📜sortPalinArr.test.js         // test the sort method
+
+// tree of "/public"
 
 📦public
 ┣ 📜favicon.ico     // React app logo
@@ -132,7 +139,6 @@ This file tree contains the whole web app.
 
 The test focuses on testing `searchPalindromes.js` and `sortPalinArr.js`. Test coverage is 100%. 14 tests passed out of 14 total tests.
 
-```
 PASS test/searchPalindromes.test.js
 PASS test/sortPalinArr.test.js
 --------------------|---------|----------|---------|---------|-------------------
@@ -150,7 +156,6 @@ Tests: 14 passed, 14 total
 Snapshots: 0 total
 Time: 1.518 s, estimated 2 s
 Ran all test suites.
-```
 
 ### Test Strategy
 
@@ -163,13 +168,13 @@ Ran all test suites.
 
 - Test the example case: `"ABCBAHELLOHOWRACECARAREYOUILOVEUEVOLIIAMAIDOINGGOOD"`
 
-  - Test either "length" or "position" is the main sort key
-  - Test either "ascend" or "descend" for the sort key
+  - Test "length" or "position" as the main sort key
+  - Test "ascend" or "descend" order for the sort key
   - 8 scenarios in total
 
 - Test a random case: `"aaaabbbbccccMadamLolLoL"`
 
-  - To test the whether sorting by length works well within groups of substings with the same starting "position"
+  - To test whether sorting by length works well within groups of substings with the same starting "position"
   - 4 scenarios in total.
 
 ## Future Work
