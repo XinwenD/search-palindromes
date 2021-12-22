@@ -2,6 +2,8 @@
 
 This web app lists all palindromic substrings and sort them according to their lengths or starting positions.
 
+[Try this app](https://xinwend.github.io/search-palindromes/)
+
 - Language: JavaScript
 - Framework: React
 - Test: Jest
@@ -100,6 +102,8 @@ This app is also case sensitive, which means no case conversion. If we compare `
  ┣ 📂test
  ┣ 📜.babelrc               // babel config for JavaScript syntax version management
  ┣ 📜.gitignore
+ ┣ 📜built.js               // built js to serve and used by Github pages
+ ┣ 📜index.html             // the entry root file used by Github pages
  ┣ 📜.package-lock.json
  ┣ 📜.package.json
  ┣ 📜README.md
